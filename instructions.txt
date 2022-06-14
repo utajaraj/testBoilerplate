@@ -1,0 +1,11 @@
+1. Log error into the filesystem if the database connection fails
+2. Connect to the database and log the IP address, the host and port onto the filesystem in a json file called connections.json
+    Every log should be an object with the following structure: 
+    {
+        id: IncrementalInteger,
+        errorMessage: String,
+        host: String,
+        ipAddress: String
+    }
+3. Create a get route to get all connection to the db with the optional query parameter "top". Where top is an integer that limits the number of returned objects to said Integer sorted by newest.
+4. Create a get route to get all the history of database connection by an id using url parameters, no get queries.
