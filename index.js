@@ -6,8 +6,6 @@ connection().then((good) => {
 
 }).catch((unforseenError) => {
 
-
-
   // save log info on filesystem
 
 })
