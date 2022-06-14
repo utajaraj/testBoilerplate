@@ -17,10 +17,13 @@ const options = {
 
       return new Promise((resolve,reject)=>{
 
-          mongoose.connect(process.env.MONGOURI, options, function(err) {
-              err?reject({status:false, message:"Connection to database failed", data:err}):resolve({status:true, message:"Connection to database successful", data:null})
-          });
-          
+       if ((Math.floor(Math.random()*10)+1)%2===0) {
+           resolve({status:true, message:"Successfull conneciton"})
+           return
+       }
+
+       reject({status:false, message:"Error on db connection"})
+
       })
 
   }
